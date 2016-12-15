@@ -1,6 +1,6 @@
 #!/bin/bash
 
-RELEASE_DIR=~/var/remote-heater-server-meteor/
+RELEASE_DIR=`echo ~`/var/remote-heater-server-meteor/
 
 echo "About to install npm dependencies"
 npm install --production
@@ -13,7 +13,7 @@ echo "Building release in: ${RELEASE_DIR}"
 meteor build ${RELEASE_DIR} --architecture os.linux.x86_64
 
 echo "Extracting release"
-tar -xf $RELEASE_DIR/remote-heater-server-meteor.tar.gz
+tar -xf $RELEASE_DIR/remote-heater-server-meteor.tar.gz -C $RELEASE_DIR
 
 echo "Cleaning up"
 rm $RELEASE_DIR/remote-heater-server-meteor.tar.gz
