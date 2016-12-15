@@ -1,0 +1,32 @@
+<template name="heaterSwitch">
+    <h2>Sterowanie piecem</h2>
+    <div>Ustawiona temperatura</div>
+    <input id="target-temp" name="target-temp" value="{{currentSwitch.temperature}}" />
+    <br/>
+    <br/>
+    <!-- Rectangular switch -->
+    <div class="onoffswitch">
+        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked="{{currentSwitch.enabled}}">
+        <label class="onoffswitch-label" for="myonoffswitch">
+                <span class="onoffswitch-inner"></span>
+                <span class="onoffswitch-switch"></span>
+            </label>
+    </div>
+    <h2>Historia sterowania</h2>
+    <table>
+        <tr style="background-color: #CCC;">
+            <th style="padding: 10px">Data</th>
+            <th style="padding: 10px">Włączony?</th>
+            <th style="padding: 10px">Ustawiona <br/>temperatura</th>
+            <th style="padding: 10px">Kto <br/>zmienił</th>
+        </tr>
+        {{#each lastSwitches}}
+        <tr>
+            <td align="center" style="border-bottom: solid #CCC 1px; padding-left: 5px; padding-right: 5px;">{{formatDate createdAt}}</td>
+            <td align="center" style="border-bottom: solid #CCC 1px; padding-left: 5px; padding-right: 5px; ">{{enabled}}</td>
+            <td align="center" style="border-bottom: solid #CCC 1px; padding-left: 5px; padding-right: 5px;">{{temperature}}</td>
+            <td align="center" style="border-bottom: solid #CCC 1px; padding-left: 5px; padding-right: 5px;">...</td>
+        </tr>
+        {{/each}}
+    </table>
+</template>
