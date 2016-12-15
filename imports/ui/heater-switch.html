@@ -1,7 +1,7 @@
 <template name="heaterSwitch">
     <h2>Sterowanie piecem</h2>
     <div>Ustawiona temperatura</div>
-    <input id="target-temp" name="target-temp" value="{{currentSwitch.temperature}}" />
+    <input id="target-temp" name="target-temp" value="{{currentSwitch.temperature}}" />&#x2103;
     <br/>
     <br/>
     <!-- Rectangular switch -->
@@ -23,8 +23,8 @@
         {{#each lastSwitches}}
         <tr>
             <td align="center" style="border-bottom: solid #CCC 1px; padding-left: 5px; padding-right: 5px;">{{formatDate createdAt}}</td>
-            <td align="center" style="border-bottom: solid #CCC 1px; padding-left: 5px; padding-right: 5px; ">{{enabled}}</td>
-            <td align="center" style="border-bottom: solid #CCC 1px; padding-left: 5px; padding-right: 5px;">{{temperature}}</td>
+            <td align="center" style="border-bottom: solid #CCC 1px; padding-left: 5px; padding-right: 5px; ">{{{formatBoolean enabled}}}</td>
+            <td align="center" style="border-bottom: solid #CCC 1px; padding-left: 5px; padding-right: 5px;">{{{formatTemperature temperature}}}</td>
             <td align="center" style="border-bottom: solid #CCC 1px; padding-left: 5px; padding-right: 5px;">...</td>
         </tr>
         {{/each}}

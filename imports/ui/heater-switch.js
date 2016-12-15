@@ -1,5 +1,7 @@
 import './heater-switch.html'
-import { HeaterSwitch } from '../api/heater-switch.js'
+import {
+    HeaterSwitch
+} from '../api/heater-switch.js'
 
 Template.body.onCreated(function bodyOnCreated() {
     this.state = new ReactiveDict();
@@ -25,6 +27,9 @@ Template.heaterSwitch.events({
 Template.heaterSwitch.helpers({
     currentSwitch() {
         return HeaterSwitch.find({}, {
+            sort: {
+                createdAt: -1
+            },
             limit: 1
         }).fetch()[0];
     },
@@ -40,7 +45,16 @@ Template.heaterSwitch.helpers({
 
     formatDate(dateToFormat) {
         return moment(dateToFormat).format('HH:mm:ss MM-DD-YYYY');
+    },
+
+    formatBoolean(boolToFormat) {
+        return boolToFormat ? '&#x2612;' : '&#x2610;';
+    },
+
+    formatTemperature(tempToFormat) {
+        return `${tempToFormat}&#x2103;`;
     }
+
 });
 
 
