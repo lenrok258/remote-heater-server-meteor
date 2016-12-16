@@ -1,6 +1,14 @@
 #!/bin/bash
 
-RELEASE_DIR=`echo ~`/var/remote-heater-server-meteor/
+#RELEASE_DIR=`echo ~`/var/remote-heater-server-meteor/
+
+if [ -z $1 ]; then
+    echo "[ERROR] Missing required parameter: release directory"
+    echo "  Usage: ./build-release.sh /release/directory/path"
+    exit 1
+fi;
+
+RELEASE_DIR=$1
 
 echo "About to install npm dependencies"
 npm install --production
