@@ -23,3 +23,4 @@ sleep 3
 
 log "About to run <<Remote Heater Server>>"
 PORT=3001 MONGO_URL=mongodb://localhost:27017/remote-heater-server ROOT_URL=http://blue-cloud-001.lofatsoftware.com ./run-release.sh ${RELEASE_DIR} &
+ 
