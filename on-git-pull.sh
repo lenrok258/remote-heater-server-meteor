@@ -10,7 +10,7 @@ log "About to kill <<Mongo DB>>"
 kill $(ps aux | grep -v "grep" | grep "mongod" | awk '{print $2}')
 
 log "About to kill <<Remote Heater Server>>"
-kill $(ps aux | grep -v "grep" | grep "remote-heater-server" | awk '{print $2}')
+kill $(ps aux | grep -v "grep" | grep "node main.js" | awk '{print $2}')
 
 log "About to build new version of <<Remote Heater Server>> in ${RELEASE_DIR}"
 ./build-release.sh ${RELEASE_DIR}
