@@ -18,7 +18,6 @@ rm -rf ${RELEASE_DIR}
 mkdir -p ${RELEASE_DIR}
 
 echo "Building release in: ${RELEASE_DIR}"
-echo "METEOR: `which meteor`"
 /usr/local/bin/meteor build ${RELEASE_DIR} --architecture os.linux.x86_64 2>&1
 
 echo "Extracting release"
