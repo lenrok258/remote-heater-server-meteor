@@ -1,7 +1,9 @@
 #!/bin/bash
 
+LOG_FILE=./logs/`date +%Y-%m-%d_%H:%M.log`
+
 function log {
-    echo $1 #| tee -a ${LOG_FILE}
+    echo $1 | tee -a ${LOG_FILE}
 }
 
 RELEASE_DIR=~/var/remote-heater-server
@@ -17,7 +19,7 @@ log "About to build new version of <<Remote Heater Server>> in ${RELEASE_DIR}"
 
 log "About to run <<Mongo DB>>"
 ~/bin/mongod-start.sh
-sleep 10
+sleep 3
 
 log "About to run <<Remote Heater Server>>"
 PORT=3001 MONGO_URL=mongodb://localhost:27017/remote-heater-server ROOT_URL=http://blue-cloud-001.lofatsoftware.com ./run-release.sh ${RELEASE_DIR} &
