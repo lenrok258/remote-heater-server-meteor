@@ -32,9 +32,13 @@ if (Meteor.isServer) {
       response.temp = currentSwitchState.temperature;
 
       // save heater status
-      let currentTemp = this.queryParams.current_temp;
-      let currentStatus = this.queryParams.current_state;
-      saveStatus(Number(currentTemp), currentStatus);
+      try {
+        let currentTemp = this.queryParams.current_temp;
+        let currentStatus = this.queryParams.current_state;
+        saveStatus(parseFloat(currentTemp), currentStatus);
+      } catch(err) {
+        console.err(err)
+      }
 
       return response;
     }
