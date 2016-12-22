@@ -3,8 +3,31 @@
 body {
   font-family: sans-serif;
   background-color: #FEE;
-  margin: 50px;
+  margin: 20px;
   font-size: 14px;
+}
+
+
+/* Main layout */
+
+#main-container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+#heater-switch-container {
+  margin-right: 30px;
+  margin-bottom: 30px;
+  padding: 15px;
+  background-color: #ECC;
+}
+
+#heater-status-container {
+  padding-right: 30px;
+  padding: 15px;
+  background-color: #ECC;
 }
 
 

@@ -1,6 +1,4 @@
-import {
-  HeaterSwitch
-} from '../imports/api/heater-switch.js'
+import { HeaterSwitch } from '../imports/api/heater-switch.js'
 
 if (Meteor.isServer) {
   var Api = new Restivus({

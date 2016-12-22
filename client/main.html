@@ -4,10 +4,14 @@
 
 <body>
   <h1>Zdalny piec</h1>
-  {{> loginButtons}} 
-
-  {{#if currentUser}}
-    {{> heaterSwitch }} 
-    {{> heaterCurrents }}
+  {{> loginButtons}} {{#if currentUser}}
+  <div id="main-container">
+    <div id="heater-switch-container">
+      {{> heaterSwitch }}
+    </div>
+    <div id="heater-status-container">
+      {{> heaterStatus }}
+    </div>
+  </div>
   {{/if}}
 </body>
