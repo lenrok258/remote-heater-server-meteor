@@ -37,7 +37,7 @@ if (Meteor.isServer) {
         let currentStatus = this.queryParams.current_state;
         saveStatus(parseFloat(currentTemp), currentStatus);
       } catch(err) {
-        console.err(err)
+        console.error(err)
       }
 
       return response;
