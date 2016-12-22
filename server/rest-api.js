@@ -1,4 +1,6 @@
 import { HeaterSwitch } from '../imports/api/heater-switch.js'
+import { saveStatus } from '../imports/api/heater-status.js'
+
 
 if (Meteor.isServer) {
   var Api = new Restivus({
@@ -10,14 +12,14 @@ if (Meteor.isServer) {
     authRequired: false
   }, {
     get: function () {
-      var currentSwitchState = HeaterSwitch.find({}, {
+      let currentSwitchState = HeaterSwitch.find({}, {
         limit: 1,
         sort: {
           createdAt: -1
         },
       }).fetch()[0];
 
-      var response = {};
+      let response = {};
 
       // command
       if (currentSwitchState.enabled == true) {
@@ -27,7 +29,12 @@ if (Meteor.isServer) {
       }
 
       // temp
-      response.temp = currentSwitchState.temperature
+      response.temp = currentSwitchState.temperature;
+
+      // save heater status
+      let currentTemp = this.queryParams.current_temp;
+      let currentStatus = this.queryParams.current_state;
+      saveStatus(Number(currentTemp), currentStatus);
 
       return response;
     }

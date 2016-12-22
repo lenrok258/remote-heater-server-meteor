@@ -2,7 +2,6 @@ import { Meteor } from 'meteor/meteor';
 import { Mongo } from 'meteor/mongo';
 import { check } from 'meteor/check';
 
-
 export const HeaterSwitch = new Mongo.Collection('heater-switch');
 
 if (Meteor.isServer) {
@@ -37,8 +36,7 @@ Meteor.methods({
             enabled: enabled,
             temperature: temperature,
             createdAt: new Date(),
-            user: Meteor.user().username,
-            // username: Meteor.users.findOne(this.userId).username,
+            user: Meteor.user().username
         });
     }
 });

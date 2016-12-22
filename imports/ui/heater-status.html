@@ -2,4 +2,20 @@
     <h2>Aktualne dane:</h2>
     <div>Piec wyłączony</div>
     <div>Temperatura w biurze: 20oC</div>
+
+    <h2>Historia pieca</h2>
+    <table>
+        <tr style="background-color: #CCC;">
+            <th style="padding: 10px">Data</th>
+            <th style="padding: 10px">Status pieca</th>
+            <th style="padding: 10px">Temperatura <br/> w biurze</th>
+        </tr>
+        {{#each lastStatuses}}
+        <tr>
+            <td align="center" style="border-bottom: solid #CCC 1px; padding-left: 5px; padding-right: 5px;">{{formatDate createdAt}}</td>
+            <td align="center" style="border-bottom: solid #CCC 1px; padding-left: 5px; padding-right: 5px; ">{{status}}</td>
+            <td align="center" style="border-bottom: solid #CCC 1px; padding-left: 5px; padding-right: 5px;">{{{formatTemperature temperature}}}</td>
+        </tr>
+        {{/each}}
+    </table>
 </template>

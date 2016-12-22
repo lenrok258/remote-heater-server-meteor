@@ -1,10 +1,7 @@
 import './heater-switch.html'
-import {
-    HeaterSwitch
-} from '../api/heater-switch.js'
+import { HeaterSwitch } from '../api/heater-switch.js'
 
-Template.body.onCreated(function bodyOnCreated() {
-    this.state = new ReactiveDict();
+Template.heaterSwitch.onCreated(function bodyOnCreated() {
     Meteor.subscribe('heater-switch');
 });
 
