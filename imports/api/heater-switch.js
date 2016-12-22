@@ -7,8 +7,11 @@ export const HeaterSwitch = new Mongo.Collection('heater-switch');
 
 if (Meteor.isServer) {
     Meteor.publish('heater-switch', function heaterSwitch() {
-        // if not logged
-        // return this.ready()
+        
+        // Only for logged in user
+        if (!this.userId) {
+            return this.ready()
+        }
 
         return HeaterSwitch
             .find({}, {
@@ -25,16 +28,16 @@ Meteor.methods({
         check(enabled, Boolean);
         check(temperature, Number)
 
-        // Make sure the user is logged in before inserting a task
-        // if (!this.userId) {
-        //     throw new Meteor.Error('not-authorized');
-        // }
+        // Only for logged in user
+        if (!this.userId) {
+            throw new Meteor.Error('not-authorized');
+        }
 
         HeaterSwitch.insert({
             enabled: enabled,
             temperature: temperature,
             createdAt: new Date(),
-            // owner: this.userId,
+            user: Meteor.user().username,
             // username: Meteor.users.findOne(this.userId).username,
         });
     }

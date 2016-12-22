@@ -4,11 +4,8 @@ import { Template } from 'meteor/templating';
 import './main.html';
 import '../imports/ui/heater-switch.js'
 import '../imports/ui/heater-status.js'
+import '../imports/startup/accounts-config.js';
 
-
-
-
-// import '../imports/startup/accounts-config.js';
 // import '../imports/ui/body.js';
 
 // Template.hello.onCreated(function helloOnCreated() {
