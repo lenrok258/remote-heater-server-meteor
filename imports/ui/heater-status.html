@@ -1,7 +1,7 @@
 <template name="heaterStatus">
     <h2>Aktualne dane:</h2>
-    <div>Piec wyłączony</div>
-    <div>Temperatura w biurze: 20oC</div>
+    <h3>Piec: {{currentStatus.status}}</h3>
+    <h3>Temperatura w biurze: {{{formatTemperature currentStatus.temperature}}}</h3>
 
     <h2>Historia pieca</h2>
     <table>
