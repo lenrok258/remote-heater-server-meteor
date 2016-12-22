@@ -12,12 +12,26 @@ if (Meteor.isServer) {
     authRequired: false
   }, {
     get: function () {
-      return HeaterSwitch.find({}, {
+      var currentSwitchState = HeaterSwitch.find({}, {
         limit: 1,
         sort: {
           createdAt: -1
         },
       }).fetch()[0];
+
+      var response = {};
+
+      // command
+      if (currentSwitchState.enabled == true) {
+        response.command = 'THON'
+      } else {
+        response.command = 'THOFF'
+      }
+
+      // temp
+      response.temp = currentSwitchState.temperature
+
+      return response;
     }
   });
 
