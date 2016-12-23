@@ -3,8 +3,11 @@
 </head>
 
 <body>
-  <h1>Zdalny piec</h1>
-  {{> loginButtons}} {{#if currentUser}}
+  <div id="header">
+    <h1>Zdalny piec</h1>
+    {{> loginButtons}}
+  </div>
+  {{#if currentUser}}
   <div id="main-container">
     <div id="heater-switch-container">
       {{> heaterSwitch }}

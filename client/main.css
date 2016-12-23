@@ -2,11 +2,14 @@
 
 body {
   font-family: sans-serif;
-  background-color: #FEE;
+  background-color: #EEE;
   margin: 20px;
   font-size: 14px;
 }
 
+#header {
+  text-align: left;
+}
 
 /* Main layout */
 
@@ -15,19 +18,28 @@ body {
   flex-direction: row;
   margin-top: 10px;
   flex-wrap: wrap;
+  justify-content: left;
 }
 
 #heater-switch-container {
   margin-right: 30px;
   margin-bottom: 30px;
   padding: 15px;
-  background-color: #ECC;
+  background-color: #EEB;
+  border: 1px solid #DDA;
+  flex-grow: 1;
+  flex-basis: 0;
 }
 
 #heater-status-container {
   padding-right: 30px;
   padding: 15px;
-  background-color: #ECC;
+  margin-bottom: 30px;
+  margin-right: 30px;
+  background-color: #CEC;
+  border: 1px solid #BDB;
+  flex-grow: 1;
+  flex-basis: 0;
 }
 
 
