@@ -4,7 +4,9 @@
 
 <body>
   <div id="header">
+    {{#if currentUser}}
     <h1>Zdalny piec</h1>
+    {{/if}} 
     {{> loginButtons}}
   </div>
   {{#if currentUser}}
