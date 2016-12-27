@@ -1,7 +1,7 @@
 <template name="heaterStatus">
-    <h2>Aktualne dane:</h2>
-    <h3>Piec: {{currentStatus.status}}</h3>
-    <h3>Temperatura w biurze: {{{formatTemperature currentStatus.temperature}}}</h3>
+    <h1>W biurze</h1>
+    <h3>Piec: {{formatStatus currentStatus.status}}</h3>
+    <h3>Temperatura: {{{formatTemperature currentStatus.temperature}}}</h3>
 
     <h2>Historia pieca</h2>
     <table>
@@ -13,7 +13,7 @@
         {{#each lastStatuses}}
         <tr>
             <td align="center" style="border-bottom: solid #CCC 1px; padding-left: 5px; padding-right: 5px;">{{formatDate createdAt}}</td>
-            <td align="center" style="border-bottom: solid #CCC 1px; padding-left: 5px; padding-right: 5px; ">{{status}}</td>
+            <td align="center" style="border-bottom: solid #CCC 1px; padding-left: 5px; padding-right: 5px; ">{{formatStatus status}}</td>
             <td align="center" style="border-bottom: solid #CCC 1px; padding-left: 5px; padding-right: 5px;">{{{formatTemperature temperature}}}</td>
         </tr>
         {{/each}}

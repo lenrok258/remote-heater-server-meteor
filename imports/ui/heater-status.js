@@ -34,6 +34,18 @@ Template.heaterStatus.helpers({
 
     formatTemperature(tempToFormat) {
         return `${tempToFormat}&#x2103;`;
+    },
+    
+    formatStatus(statusToFormat) {
+        switch(statusToFormat) {
+            case 'on':
+                return 'włączony';
+            case 'off':
+                return 'wyłączony';
+            default:
+                return 'nieznany';
+            
+        }
     }
 
 });

@@ -7,8 +7,20 @@ body {
   font-size: 14px;
 }
 
-#header {
+.header {
   text-align: left;
+}
+
+.title-box > .title-text {
+  display: inline;
+  margin-left: 10px;
+  font-size: 64px;
+}
+
+.title-box > .title-text {
+  display: inline;
+  margin-left: 10px;
+  font-size: 64px
 }
 
 /* Main layout */

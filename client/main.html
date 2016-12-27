@@ -3,11 +3,14 @@
 </head>
 
 <body>
-  <div id="header">
+  <div class="header">
     {{#if currentUser}}
-    <h1>Zdalny piec</h1>
-    {{/if}} 
-    {{> loginButtons}}
+    <div class="title-box">
+      <img src="/images/logo.png" width="64" height="64" />
+      <h1 class="title-text">Zdalny piec</h1>
+    </div>
+    {{/if}}
+    <div class="button-box">{{> loginButtons}}</div>
   </div>
   {{#if currentUser}}
   <div id="main-container">
