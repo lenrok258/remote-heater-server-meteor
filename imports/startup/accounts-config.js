@@ -5,6 +5,6 @@ Accounts.ui.config({
 });
 
 Accounts.config({
-    forbidClientAccountCreation: true,
+    forbidClientAccountCreation: false,
     loginExpirationInDays: 1
 });
