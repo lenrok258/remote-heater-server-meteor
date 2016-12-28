@@ -4,12 +4,16 @@
     <h3>Temperatura: {{{formatTemperature currentStatus.temperature}}}</h3>
 
     <h2>Historia pieca</h2>
+
+    {{> highchartsHelper chartId="temperatureChartDataId" chartWidth="100%" charHeight="100%" chartObject=temperatureChartData}}
+
     <table>
         <tr style="background-color: #CCC;">
             <th style="padding: 10px">Data</th>
             <th style="padding: 10px">Status pieca</th>
             <th style="padding: 10px">Temperatura <br/> w biurze</th>
         </tr>
+
         {{#each lastStatuses}}
         <tr>
             <td align="center" style="border-bottom: solid #CCC 1px; padding-left: 5px; padding-right: 5px;">{{formatDate createdAt}}</td>

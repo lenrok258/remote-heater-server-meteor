@@ -23,6 +23,11 @@ body {
   font-size: 64px
 }
 
+/* temperatureChartDataId */
+#temperatureChartDataId {
+  margin-bottom: 20px;
+}
+
 /* Main layout */
 
 #main-container {
