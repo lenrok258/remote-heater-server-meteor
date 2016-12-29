@@ -58,7 +58,7 @@ Template.heaterStatus.helpers({
             limit: 120
         }).fetch();
 
-        let dataChart = dataInput.map(function (input) {
+        let tempDataChart = dataInput.map(function (input) {
             return {
                 x: input.createdAt,
                 y: input.temperature
@@ -112,7 +112,7 @@ Template.heaterStatus.helpers({
 
             series: [{
                 type: 'area',
-                data: dataChart
+                data: tempDataChart
             }]
         };
     }
