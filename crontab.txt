@@ -1,0 +1,5 @@
+# Remote heater server: Remove heater statuses older then 2 days
+0 1 * * * ~/programs/mongodb/bin/mongo remote-heater-server --eval 'db["heater-status"].remove({createdAt:{$lt:new Date(new Date() - 1000*60*60*24*2)}})'
+
+# Remote heater server: Remove heater swich logs older then 7 days
+10 1 * * * ~/programs/mongodb/bin/mongo remote-heater-server --eval 'db["heater-swich"].remove({createdAt:{$lt:new Date(new Date() - 1000*60*60*24*7)}})'
