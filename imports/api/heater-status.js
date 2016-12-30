@@ -17,7 +17,7 @@ if (Meteor.isServer) {
                 sort: {
                     createdAt: -1
                 },
-                limit: 60 * 24
+                limit: 60 * 12
             })
     });
 }

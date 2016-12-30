@@ -55,7 +55,7 @@ Template.heaterStatus.helpers({
             sort: {
                 createdAt: -1
             },
-            limit: 60 * 24
+            limit: 60 * 12
         }).fetch();
 
         let tempDataChart = dataInput.map(function (input) {
