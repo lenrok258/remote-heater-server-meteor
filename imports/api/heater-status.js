@@ -22,13 +22,19 @@ if (Meteor.isServer) {
     });
 }
 
+var saveStatusCount = 0
 export function saveStatus(temperature, status) {
     check(temperature, Number)
     check(status, String);
 
-     HeaterStatus.insert({
+    // Save only 1 of 10 statuses
+    saveStatusCount++;
+    if (saveStatusCount % 10 === 0) {
+        HeaterStatus.insert({
             temperature: temperature,
             createdAt: new Date(),
             status: status
         });
+        saveStatusCount = 0
+    }
 }
